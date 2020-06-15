@@ -20,7 +20,10 @@ create unique index xy_idx on pixels (xy);
 
 
 def fmt_color(n):
-    return max(0, min(int(n), 255))
+    try:
+        return max(0, min(int(n), 255))
+    except:
+        return 0
 
 
 def read_modify_save(from_path, statement, out_path):
